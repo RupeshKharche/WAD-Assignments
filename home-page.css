@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid;
+    height: 60px;
+    position: relative;
+}
+
+.navbar .nav-items {
+    margin-left: 50px;
+    font-size: larger;
+    width: 15%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid; */
+}
+
+.navbar .searchbar {
+    /* border: 1px solid; */
+    width: 35%;
+    margin-left: 40px;
+}
+
+.navbar .searchbar input {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar .nav-btn {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 125px;
+    /* border: 1px solid; */
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .nav-btn button {
+    padding: 5px;
+}
