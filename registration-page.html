@@ -5,40 +5,40 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
 	<link rel="stylesheet" href="registration-page.css">
+	<link href="assets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.2_dist_css_bootstrap.css" rel="stylesheet">
 </head>
 <body>
-	<!-- <div id="register-form-container" class="register-form-container">
-		<div id="username-container">
-			<label for="full-name">Name</label>
-			<input id="full-name" type="text" placeholder="Enter full name">
-		</div>
+<!-- <div id="username-container">
+	<label for="full-name">Name</label>
+	<input id="full-name" type="text" placeholder="Enter full name">
+</div>
 
-		<div>
-			<label for="username">Username</label>
-			<input id="username" type="text" placeholder="Enter username">
-		</div>
+<div>
+	<label for="username">Username</label>
+	<input id="username" type="text" placeholder="Enter username">
+</div>
 
-		<div>
-			<label for="email">Email</label>
-			<input id="email" type="email" placeholder="Enter email">
-		</div>
+<div>
+	<label for="email">Email</label>
+	<input id="email" type="email" placeholder="Enter email">
+</div>
 
-		<div>
-			<label for="phone">Mob No</label>
-			<input id="email" type="tel" maxlength="10" pattern="[0-9]{10}" placeholder="Enter email">
-		</div>
+<div>
+	<label for="phone">Mob No</label>
+	<input id="email" type="tel" maxlength="10" pattern="[0-9]{10}" placeholder="Enter email">
+</div>
 
-		<div>
-			<p style="font-size: larger;">Gender</p>
-			<label for="gender">Male</label>
-			<input id="gender" type="radio" name="gender">
+<div>
+	<p style="font-size: larger;">Gender</p>
+	<label for="gender">Male</label>
+	<input id="gender" type="radio" name="gender">
 
-			<label for="gender">Female</label>
-			<input id="gender" type="radio" name="gender">
-		</div>
-	</div> -->
+	<label for="gender">Female</label>
+	<input id="gender" type="radio" name="gender">
+</div>
+</div> -->
 
-	<div class="register-form-container">
+<!--	<div class="register-form-container">
 		<table class="register-form">
 			<tr class="fullname-container">
 				<td>
@@ -81,7 +81,125 @@
 					<button type="submit">Register</button>
 				</td>
 			</tr>
-		</table>
+		</table> -->
+
+<!--	<div class="vw-100 vh-100 container d-flex- flex-column justify-content-center align-items-center">-->
+<!--		<form class="card p-3 w-50 h-35">-->
+<!--			<div class="form-group">-->
+<!--				<label for="full-name">Name</label>-->
+<!--				<input id="full-name" type="text" class="form-control" required placeholder="Enter full name">-->
+<!--			</div>-->
+<!--		</form>-->
+<!--	</div>-->
+
+	<div class="h2 d-flex justify-content-center mt-5 mb-3">
+		Register
 	</div>
+
+	<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+		<form class="card p-4 w-50 mb-5 shadow">
+			<!--Full name-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="fullname">Name</label>
+				<input id="fullname" type="text" class="form-control" placeholder="Enter full name" required>
+			</div>
+
+			<!--Username-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="username">Username</label>
+				<input id="username" type="text" class="form-control" placeholder="Enter username" required>
+			</div>
+
+			<!--Email-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="email">Email</label>
+				<input id="email" type="email" class="form-control" placeholder="Enter email" required>
+			</div>
+
+			<!--DOB-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="dob">DOB</label>
+				<input id="dob" type="date" class="form-control" required>
+			</div>
+
+			<!--Gender-->
+			<div class="mb-1">
+				<label class="form-check-label" for="gender-radio-container">Gender</label>
+			</div>
+			<div id="gender-radio-container" class="form-check form-check-inline">
+				<input class="form-check-input" id="gender-male" type="radio" name="gender" value="male">
+				<label class="form-check-label" for="gender-male">Male</label>
+			</div>
+			<div class="form-check form-check-inline mb-4">
+				<input class="form-check-input" id="gender-female" type="radio" name="gender" value="female">
+				<label class="form-check-label" for="gender-female">Female</label>
+			</div>
+
+			<!--Address-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="address">Address</label>
+				<textarea id="address" class="form-control" placeholder="Enter address"></textarea>
+			</div>
+
+			<!--State-->
+			<select class="form-select mb-4 w-25" aria-label="state">
+				<option selected>Select State</option>
+				<option value="maharahstra">Maharashtra</option>
+				<option value="tamil-nadu">Tamil Nadu</option>
+				<option value="kerala">Kerala</option>
+				<option value="gujarat">Gujarat</option>
+			</select>
+
+			<!--City-->
+			<select class="form-select mb-4 w-25" aria-label="city">
+				<option selected>Select City</option>
+				<option value="pune">Pune</option>
+				<option value="mumbai">Mumbai</option>
+				<option value="nashik">Nashik</option>
+				<option value="nagpur">Nagpur</option>
+			</select>
+
+			<!--Pincode-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="pincode">Pincode</label>
+				<input id="pincode" type="number" min="110001" max="855117" pattern="[0-9]{6}" class="form-control"
+				       placeholder="Enter pincode"
+				       required>
+			</div>
+
+			<!--Hobbies-->
+			<div class="mb-1">
+				<label class="form-check-label" for="hobbies-checkbox-container">Hobbies</label>
+			</div>
+			<div id="hobbies-checkbox-container" class="form-check form-check-inline">
+				<input class="form-check-input" id="hobby1" type="checkbox" name="hobbies" value="dancing">
+				<label class="form-check-label" for="hobby1">Dancing</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" id="hobby2" type="checkbox" name="hobbies" value="singing">
+				<label class="form-check-label" for="hobby2">Singing</label>
+			</div>
+			<div class="form-check form-check-inline mb-4">
+				<input class="form-check-input" id="hobby3" type="checkbox" name="hobbies" value="coding">
+				<label class="form-check-label" for="hobby3">Coding</label>
+			</div>
+
+			<!--Password-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="password">Password</label>
+				<input id="password" type="password" class="form-control" placeholder="Enter password" required>
+			</div>
+
+			<!--Submit button-->
+			<button type="submit" class="btn btn-secondary mb-2">Register</button>
+
+			<div class="form-group d-flex justify-content-center">
+				<p>Already a user? <a class="link-underline link-underline-opacity-0 link-opacity-75-hover"
+				                      href="login-page.html">Login here</a></p>
+			</div>
+		</form>
+	</div>
+
+<script src="assets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.2_dist_js_bootstrap.bundle.js"></script>
 </body>
 </html>

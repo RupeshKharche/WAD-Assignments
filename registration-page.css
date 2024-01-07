@@ -1,7 +1,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 body {
@@ -10,10 +9,11 @@ body {
 	scroll-behavior: smooth;
 }
 
+/*
 .register-form-container {
 	width: 100vw;
 	height: 100vh;
-	/* border: 1px solid black; */
+	 border: 1px solid black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -31,18 +31,19 @@ body {
 	padding: 5px;
 }
 
+
 .register-form-container input {
 	padding: 5px;
 	border-radius: 8px;
 }
 
-/* .register-form-container div {
+.register-form-container div {
 	/* border: 1px black solid;
 	display: flex;
 	align-items: center;
 	gap: 10px;
-} */
+}
 
-/* .register-form-container label {
+.register-form-container label {
 	font-size: large;
 } */
