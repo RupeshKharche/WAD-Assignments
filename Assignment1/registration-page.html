@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="container-fluid d-flex flex-column justify-content-center align-items-center">
-		<form class="card p-4 w-50 mb-5 shadow">
+		<form class="card p-4 w-50 mb-5 shadow needs-validation">
 			<!--Full name-->
 			<div class="form-group mb-4">
 				<label class="form-label" for="fullname">Name</label>
@@ -26,6 +26,18 @@
 			<div class="form-group mb-4">
 				<label class="form-label" for="username">Username</label>
 				<input id="username" type="text" class="form-control" placeholder="Enter username" required>
+			</div>
+
+			<!--Password-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="password">Password</label>
+				<input id="password" type="password" class="form-control" placeholder="Enter password" required>
+			</div>
+
+			<!--Mobile-->
+			<div class="form-group mb-4">
+				<label class="form-label" for="mobile">Mobile</label>
+				<input id="mobile" type="tel" class="form-control" placeholder="Enter phone number" required>
 			</div>
 
 			<!--Email-->
@@ -40,20 +52,6 @@
 				<input id="dob" type="date" class="form-control" required>
 			</div>
 
-
-			<!--
-			<div class="mb-1">
-				<label class="form-check-label" for="gender-radio-container">Gender</label>
-			</div>
-			<div id="gender-radio-container" class="form-check form-check-inline">
-				<input class="form-check-input" id="gender-male" type="radio" name="gender" value="male">
-				<label class="form-check-label" for="gender-male">Male</label>
-			</div>
-			<div class="form-check form-check-inline mb-4">
-				<input class="form-check-input" id="gender-female" type="radio" name="gender" value="female">
-				<label class="form-check-label" for="gender-female">Female</label>
-			</div> -->
-
 			<!--Gender-->
 			<label class="mb-2" for="gender-radio-container">
 				Gender
@@ -63,7 +61,7 @@
 				<label class="btn btn-outline-secondary" for="gender-male">Male</label>
 
 				<input type="radio" class="btn-check" name="gender" id="gender-female" value="female"
-				       autocomplete="off">
+				autocomplete="off">
 				<label class="btn btn-outline-secondary" for="gender-female">Female</label>
 			</div>
 
@@ -95,26 +93,26 @@
 			<div class="form-group mb-4">
 				<label class="form-label" for="pincode">Pincode</label>
 				<input id="pincode" type="number" min="110001" max="855117" pattern="[0-9]{6}" class="form-control"
-				       placeholder="Enter pincode"
-				       required>
+				placeholder="Enter pincode"
+				required>
 			</div>
 
 			<!--Hobbies-->
-<!--			<div class="mb-1">-->
-<!--				<label class="form-check-label" for="hobbies-checkbox-container">Hobbies</label>-->
-<!--			</div>-->
-<!--			<div id="hobbies-checkbox-container" class="form-check form-check-inline ">-->
-<!--				<input class="form-check-input" id="hobby1" type="checkbox" name="hobbies" value="dancing">-->
-<!--				<label class="form-check-label" for="hobby1">Dancing</label>-->
-<!--			</div>-->
-<!--			<div class="form-check form-check-inline">-->
-<!--				<input class="form-check-input" id="hobby2" type="checkbox" name="hobbies" value="singing">-->
-<!--				<label class="form-check-label" for="hobby2">Singing</label>-->
-<!--			</div>-->
-<!--			<div class="form-check form-check-inline mb-4">-->
-<!--				<input class="form-check-input" id="hobby3" type="checkbox" name="hobbies" value="coding">-->
-<!--				<label class="form-check-label" for="hobby3">Coding</label>-->
-<!--			</div>-->
+			<!--			<div class="mb-1">-->
+			<!--				<label class="form-check-label" for="hobbies-checkbox-container">Hobbies</label>-->
+			<!--			</div>-->
+			<!--			<div id="hobbies-checkbox-container" class="form-check form-check-inline ">-->
+			<!--				<input class="form-check-input" id="hobby1" type="checkbox" name="hobbies" value="dancing">-->
+			<!--				<label class="form-check-label" for="hobby1">Dancing</label>-->
+			<!--			</div>-->
+			<!--			<div class="form-check form-check-inline">-->
+			<!--				<input class="form-check-input" id="hobby2" type="checkbox" name="hobbies" value="singing">-->
+			<!--				<label class="form-check-label" for="hobby2">Singing</label>-->
+			<!--			</div>-->
+			<!--			<div class="form-check form-check-inline mb-4">-->
+			<!--				<input class="form-check-input" id="hobby3" type="checkbox" name="hobbies" value="coding">-->
+			<!--				<label class="form-check-label" for="hobby3">Coding</label>-->
+			<!--			</div>-->
 
 			<label class="mb-2" for="hobbies-check-container">
 				Hobbies
@@ -130,20 +128,57 @@
 				<label class="btn btn-outline-secondary" for="hobby3">Singing</label>
 			</div>
 
-			<!--Password-->
-			<div class="form-group mb-4">
-				<label class="form-label" for="password">Password</label>
-				<input id="password" type="password" class="form-control" placeholder="Enter password" required>
-			</div>
 
 			<!--Submit button-->
-			<button type="submit" class="btn btn-secondary mb-2" onclick="register()">Register</button>
+			<button type="submit" class="btn btn-secondary mb-2">Register</button>
 
 			<div class="form-group d-flex justify-content-center">
 				<p>Already a user? <a class="link-underline link-underline-opacity-0 link-opacity-75-hover"
 				                      href="login-page.html">Login here</a></p>
 			</div>
 		</form>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				// Fetch the form element
+				var form = document.querySelector('.needs-validation');
+
+				// Add a submit event listener to the form
+				form.addEventListener('submit', function (event) {
+					// Check if the form is valid
+					if (!form.checkValidity()) {
+						// If not valid, prevent the form submission
+						event.preventDefault();
+						event.stopPropagation();
+					}
+
+					// Mark the form as validated to prevent default validation messages
+					form.classList.add('was-validated');
+					register();
+				});
+
+				// Custom validation for Pincode
+				var pincodeInput = document.getElementById('pincode');
+				pincodeInput.addEventListener('input', function () {
+					if (!/^\d{6}$/.test(pincodeInput.value)) {
+						pincodeInput.setCustomValidity('Please enter a valid 6-digit pincode.');
+					} else {
+						pincodeInput.setCustomValidity('');
+					}
+				});
+
+				// Custom validation for phone number
+				var mobileInput = document.getElementById('mobile');
+				mobileInput.addEventListener('input', function () {
+					if (!/^\d{10}$/.test(mobileInput.value)) {
+						mobileInput.setCustomValidity('Please enter a valid 10-digit mobile number.');
+					} else {
+						mobileInput.setCustomValidity('');
+					}
+				});
+			});
+
+		</script>
 	</div>
 
 	<script src="./assets/http_cdn.jsdelivr.net_npm_bootstrap@5.3.2_dist_js_bootstrap.bundle.js"></script>

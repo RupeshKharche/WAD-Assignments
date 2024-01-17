@@ -36,8 +36,6 @@ function register() {
 }
 
 function displayData(userData) {
-    alert("Inside displayData()");
-
     $.ajax({
         type: 'POST',
         url: 'https://jsonplaceholder.typicode.com/posts', // Using JSONPlaceholder for testing
