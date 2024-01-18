@@ -130,7 +130,8 @@
 
 
 			<!--Submit button-->
-			<button type="submit" class="btn btn-secondary mb-2">Register</button>
+			<button id="register-btn" type="button" class="btn btn-secondary mb-2" onclick="register()">Register
+			</button>
 
 			<div class="form-group d-flex justify-content-center">
 				<p>Already a user? <a class="link-underline link-underline-opacity-0 link-opacity-75-hover"
@@ -139,24 +140,6 @@
 		</form>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				// Fetch the form element
-				var form = document.querySelector('.needs-validation');
-
-				// Add a submit event listener to the form
-				form.addEventListener('submit', function (event) {
-					// Check if the form is valid
-					if (!form.checkValidity()) {
-						// If not valid, prevent the form submission
-						event.preventDefault();
-						event.stopPropagation();
-					}
-
-					// Mark the form as validated to prevent default validation messages
-					form.classList.add('was-validated');
-					register();
-				});
-
 				// Custom validation for Pincode
 				var pincodeInput = document.getElementById('pincode');
 				pincodeInput.addEventListener('input', function () {
@@ -176,7 +159,6 @@
 						mobileInput.setCustomValidity('');
 					}
 				});
-			});
 
 		</script>
 	</div>

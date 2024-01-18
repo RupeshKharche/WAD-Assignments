@@ -1,6 +1,7 @@
 function register() {
     let name = $("#fullname").val();
     let username = $("#username").val();
+    let mobile = $("#mobile").val();
     let email = $("#email").val();
     let dob = $("#dob").val();
     let gender = $("#gender-radio-container input:radio[name=gender]:checked").val();
@@ -17,22 +18,57 @@ function register() {
     }
     let password = $("#password").val();
 
-    let userData= {
-        name: name,
-        username: username,
-        email: email,
-        dob: dob,
-        gender: gender,
-        address: address,
-        state: state,
-        city: city,
-        pincode: pincode,
-        hobbies: hobbies,
-        password: password
-    }
+    let button = document.getElementById("register-btn");
 
-    console.log(JSON.stringify(userData));
-    displayData(userData);
+    let isValid = true;
+    button.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        // Password should be at least 4 characters
+        if (password.length < 4) {
+            isValid = false;
+            alert("Password should be at least 4 characters");
+        }
+
+        // Email should contain '@'
+        if (!email.includes('@')) {
+            isValid = false;
+            alert("Please enter a valid email address");
+        }
+
+        // Date of Birth should not be more than 2004
+        if (dob.getFullYear() > 2004) {
+            isValid = false;
+            alert("Date of Birth should not be more than 2004");
+        }
+
+        // Pincode should have exactly 6 digits
+        if (!/^\d{6}$/.test(pincode)) {
+            isValid = false;
+            alert("Pincode should have exactly 6 digits");
+        }
+    })
+
+    if(isValid) {
+        let userData = {
+            name: name,
+            username: username,
+            mobile: mobile,
+            email: email,
+            dob: dob,
+            gender: gender,
+            address: address,
+            state: state,
+            city: city,
+            pincode: pincode,
+            hobbies: hobbies,
+            password: password
+        }
+
+        console.log(JSON.stringify(userData));
+        displayData(userData);
+    }
 }
 
 function displayData(userData) {
