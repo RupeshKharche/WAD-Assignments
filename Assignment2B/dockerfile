@@ -6,6 +6,7 @@ WORKDIR /usr/share/nginx/html
 
 # Copying files into the container
 COPY . .
+COPY login-page.html index.html
 
 # Expose port 80
 EXPOSE 80
