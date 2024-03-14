@@ -1,0 +1,8 @@
+.ui-navbar li .ui-btn {
+	font-size: 18px;
+}
+
+.ui-content {
+	border: 1px solid black;
+	margin-top: 10px;
+}
