@@ -47,9 +47,9 @@ function calcTable() {
 			const cell2Value = table2.rows[row].cells[col].innerText;
 
 			if (cell1Value === cell2Value) {
-				table3 += `<td>${cell1Value}</td>`;
+				table3 += `<td style="background-color: lightblue;">${cell1Value}</td>`;
 			} else {
-				table3 += `<td>${cell1Value * cell2Value}</td>`;
+				table3 += `<td style="background-color: lightcoral;">${cell1Value * cell2Value}</td>`;
 			}
 		}
 		table3 += "</tr>";
