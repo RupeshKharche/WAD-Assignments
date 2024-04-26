@@ -3,13 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>User Info</title>
+	<script src="./user-info.js"></script>
+	<script type="text/javascript" src="../jquery-3.7.1.min.js"></script>
 </head>
 <body>
-	<p id="username"></p>
-	<p id="email"></p>
-	<p id="password"></p>
+	<div id="user-info-container">
+	
+	</div>
+	
+	<a href="./index.html">Go to registration page</a>
 </body>
 
-<script src="user-info.js"></script>
-<script type="text/javascript" src="../jquery-3.7.1.min.js"></script>
+<script>
+	$(document).ready(() => {
+		$.get({
+			url: "http://localhost:3000/getUsers",
+			success: (response) => {
+				displayData(JSON.parse(response.body));
+			}
+		})
+	});
+</script>
 </html>

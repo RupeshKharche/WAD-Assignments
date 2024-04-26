@@ -11,14 +11,14 @@ function addUser(registerForm) {
 		password: password
 	};
 	
-	$.post({
-		url: 'https://jsonplaceholder.typicode.com/posts',
+	$.ajax({
+		url: 'http://localhost:3000/register',
 		type: "POST",
 		contentType: "application/json",
 		data: JSON.stringify(user),
 		success: function(response) {
 			// Redirect the user to the user info page
-			window.location.href = 'user-info.html?data=' + JSON.stringify(response);
+			window.location.href = 'user-info.html';
 		},
 		error: function(error) {
 			console.error(error);

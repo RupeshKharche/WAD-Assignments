@@ -1,10 +1,16 @@
-const urlParams = new URLSearchParams(window.location.search);
-let data = urlParams.get("data");
+// Function to display user data
+function displayData(users) {
+	let container = document.getElementById("user-info-container");
 
-data = JSON.parse(data);
+	users.forEach((user) => {
+		// user = JSON.parse(user);
 
-console.log(data);
+		let userDiv = document.createElement("div");
+		userDiv.innerHTML += `<p>Username: ${user.username}</p>`;
+		userDiv.innerHTML += `<p>Email: ${user.email}</p>`;
+		userDiv.innerHTML += `<p>Password: ${user.password}</p>`;
 
-document.getElementById("username").innerHTML += `Username: ${data.username}`;
-document.getElementById("email").innerHTML += `Email: ${data.email}`;
-document.getElementById("password").innerHTML += `Password: ${data.password}`;
+		container.append(userDiv);
+		container.append(document.createElement("br"));
+	});
+}
