@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<script src="./script.js"></script>
+	<script src="../../jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="./home.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+</head>
+<body>
+	<button id="insert-data-btn" onclick="insertData()">Insert Data</button>
+	<br> <br>
+	<button id="get-all-students-btn" onclick="getAllStudents()">Get All Students</button>
+	<br> <br>
+	<button id="get-20Plus-DSBDA-btn" onclick="get20PlusDSBDA()">Get Students With 20 plus marks in DSBDA</button>
+	
+	<br> <br>
+	<form id="student-update-form">
+		<label for="student-name-input">Student Names: </label>
+		<input type="text" id="student-name-input" name="names" placeholder="Enter comma separated student names"
+		       required>
+		<br>
+		<button id="update-students-btn"
+		        onclick="updateStudents(document.getElementById('student-update-form'))" type="button">Update Marks</button>
+	</form>
+	
+	<p style="font-size: x-large">Response</p>
+	<div id="response-container" style="margin-top: 5px; border: black 1px solid"></div>
+	
+	<br>
+	<div id="students-table">
+<!--		<thead>-->
+<!--			<tr>-->
+<!--				<th>Name</th>-->
+<!--				<th>Roll No</th>-->
+<!--				<th>WAD</th>-->
+<!--				<th>DSBDA</th>-->
+<!--				<th>CNS</th>-->
+<!--				<th>CC</th>-->
+<!--				<th>AI</th>-->
+<!--			</tr>-->
+<!--		</thead>-->
+	</div>
+</body>
+</html>
